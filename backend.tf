@@ -1,5 +1,5 @@
 locals {
-  lock_id = uuid()  # Generate a UUID
+  lock_id = uuid()
 }
 
 terraform {
