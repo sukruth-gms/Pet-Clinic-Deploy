@@ -10,16 +10,20 @@ pipeline {
     stages {
         stage('Terraform Plan & Validate') {
             steps {
-                sh 'terraform init'
-                sh 'terraform plan -out=tfplan'
-                sh 'terraform validate'
+                node {
+                    sh 'terraform init'
+                    sh 'terraform plan -out=tfplan'
+                    sh 'terraform validate'
+                }
             }
         }
     }
     
     post {
         always {
-            cleanWs()
+            node {
+                cleanWs()
+            }
         }
     }
 }
