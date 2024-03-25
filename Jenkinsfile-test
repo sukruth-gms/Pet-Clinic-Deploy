@@ -10,11 +10,9 @@ pipeline {
     stages {
         stage('Terraform Plan & Validate') {
             steps {
-                node {
                     sh 'terraform init'
                     sh 'terraform plan -out=tfplan'
                     sh 'terraform validate'
-                }
             }
         }
     }
