@@ -1,3 +1,7 @@
+locals {
+  lock_id = uuid()  # Generate a UUID
+}
+
 terraform {
   backend "s3" {
     bucket         = "pc-remotestate-1"
