@@ -1,5 +1,5 @@
-resource "aws_dynamodb_table" "pet_state_locking" {
-  name           = "pet-state-locking"
+resource "aws_dynamodb_table" "pet_state_locking-1" {
+  name           = "pet-state-locking-1"
   billing_mode   = "PAY_PER_REQUEST"
   hash_key       = "LockID"
   range_key      = "LockCreatedAt"
@@ -15,6 +15,6 @@ resource "aws_dynamodb_table" "pet_state_locking" {
   }
   
   tags = {
-    Name = "pet-state-locking"
+    Name = "pet-state-locking-1"
   }
 }
